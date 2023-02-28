@@ -1,4 +1,17 @@
 require 'yaml'
 
-menu = YAML.load_file('lib/assets/menu.yml')
-puts menu
+namespace :db do
+  task :seed => :environment do
+    menu = YAML.load_file('lib/assets/menu.yml')
+
+    menu['ingredients'].each do |ingredient|
+      Ingredient.create(name: ingredient)
+    end
+
+    menu['dishes'].each do |dish|
+      ingredients = Ingredient.where('name IN (?)', dish['ingredients'])
+
+      Dish.create(name: dish['name'], ingredients: ingredients)
+    end
+  end
+end
