@@ -1,7 +1,5 @@
 class MenuController < ApplicationController
   def index
-    @ingredients = Ingredient.all
-    
-    render @ingredients
+    render :index
   end
 end

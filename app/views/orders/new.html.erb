@@ -1,0 +1,13 @@
+<%= form_with model: [@order], local: true do |f| %>
+  <div>
+    <%= f.collection_check_boxes :ingredient_ids, @ingredients, :id, :name do |b| %>
+      <p>
+        <%= b.object.name%>
+        <%= b.label { b.check_box } %> 
+      </p>
+    <% end %>
+  </div>
+
+  <div><%= f.submit %></div>
+
+<% end %>
