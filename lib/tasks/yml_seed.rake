@@ -2,7 +2,7 @@ require 'yaml'
 
 namespace :db do
   task :seed => :environment do
-    menu = YAML.load_file('lib/assets/menu.yml')
+    menu = YAML.load_file('lib/files/menu.yml')
 
     menu['ingredients'].each do |ingredient|
       Ingredient.create(name: ingredient)
