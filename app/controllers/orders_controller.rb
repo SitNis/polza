@@ -1,4 +1,10 @@
 class OrdersController < ApplicationController
+  def index
+    @dishes = Order.fetch_number_of_dishes
+
+    render json: @dishes
+  end
+
   def new
     @ingredients = Ingredient.all
 

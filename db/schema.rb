@@ -38,12 +38,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_28_175337) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "ingredients_orders", id: false, force: :cascade do |t|
-    t.bigint "ingredient_id", null: false
-    t.bigint "order_id", null: false
-    t.index ["order_id", "ingredient_id"], name: "index_ingredients_orders_on_order_id_and_ingredient_id", unique: true
-  end
-
   create_table "orders", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
