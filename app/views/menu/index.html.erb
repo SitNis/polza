@@ -1,17 +1,7 @@
-<% flash.each do |type, msg| %>
-  <div>
-    <%= msg %>
-  </div>
-<% end %>
-
 <div>
-  Foodie
+  <%= link_to 'Сделать заказ', new_order_path, { class: 'button' } %>
 </div>
 
 <div>
-  <%= link_to 'Сделать заказ', new_order_path %>
-</div>
-
-<div>
-  <%= link_to 'Заказы', orders_path %>
+  <%= link_to 'Заказы', orders_path , { class: 'button' } %>
 </div>

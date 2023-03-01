@@ -1,13 +1,13 @@
 <%= form_with model: @order, local: true do |f| %>
   <div>
-    <%= f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name do |b| %>
-      <p>
+    <%= f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name, { checked: false } do |b| %>
+      <p class='ingredient'>
         <%= b.object.name%>
         <%= b.label { b.check_box } %> 
       </p>
     <% end %>
   </div>
 
-  <div><%= f.submit %></div>
+  <div><%= f.submit 'Order', class: 'button' %></div>
 
 <% end %>
