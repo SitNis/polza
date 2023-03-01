@@ -1,6 +1,6 @@
 <%= form_with model: @order, local: true do |f| %>
   <div>
-    <%= f.collection_check_boxes :ingredient_ids, @ingredients, :id, :name, { checked: false } do |b| %>
+    <%= f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name do |b| %>
       <p>
         <%= b.object.name%>
         <%= b.label { b.check_box } %> 
