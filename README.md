@@ -1,6 +1,8 @@
 # README
 
 # DB setup
-  'rails db:setup'
-  'rails db:migrate'
-  'rake db:seed' to fill db with yml file
+  - 'rails db:setup'
+  - 'rails db:migrate'
+
+# Menu refresh
+  - 'rake menu:fill' to fill db with menu file
