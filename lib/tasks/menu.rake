@@ -1,9 +1,9 @@
 require 'yaml'
-require 'database_cleaner'
 
 namespace :menu do
   task :fill => :environment do
-    DatabaseCleaner.clean_with(:truncation)
+    Ingredient.destroy_all
+    Dish.destroy_all
 
     menu = YAML.load_file('lib/files/menu.yml')
 
